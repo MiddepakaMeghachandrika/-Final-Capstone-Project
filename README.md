@@ -107,6 +107,7 @@ This project implements an intelligent, real-time, data-driven pricing engine fo
  - Model 2: Demand-based Pricing
 
 8  Dataset
+
 We use a simulated dataset covering 14 parking lots, over 73 days, with 18 time points per day (every 30 mins from 8:00 AM to 4:30 PM).
 
 - Each record includes:
@@ -141,7 +142,7 @@ P(t+1) = P(t) + α × (Occupancy / Capacity)
   2.Only depends on occupancy
   3. Serves as a benchmark model
 
--Model 2: Demand-based Pricing
+- Model 2: Demand-based Pricing
   - Objective:
 Price adjusts based on a composite demand score, incorporating multiple real-world factors beyond occupancy.
 
@@ -169,6 +170,7 @@ Characteristics:
   1. More intelligent
   2.Considers queue, traffic, events, and vehicle type
   3. Produces smooth, realistic price adjustments
+     
 
 10 Visualizations:
 
@@ -184,5 +186,5 @@ Characteristics:
 1 Python 3.8+  
 2 Install dependencies:
 ```bash
-pip install pandas numpy pathway bokeh panel  ```bash
+pip install pandas numpy pathway bokeh panel  
 
