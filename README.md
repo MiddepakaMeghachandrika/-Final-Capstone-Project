@@ -6,6 +6,7 @@ This project implements a “dynamic pricing system for urban parking lots” us
 It simulates live streaming from historical data, applies a demand-based pricing model, and visualizes daily pricing trends through an interactive dashboard.
 
  Table of Contents
+ 
 -Tech Stack
 - Architecture flow
 - Architecture Diagram
@@ -86,7 +87,8 @@ Matplotlib(optional)	Exploratory plots
 
 
 6 how to run
-   you can run on google colab
+
+   - you can run on google colab
 
 7  Prerequisites
  
