@@ -9,6 +9,7 @@ It simulates live streaming from historical data, applies a demand-based pricing
 -Tech Stack
 - Architecture flow
 - Architecture Diagram
+- how to run
 - Prerequisites
 
 Tech Stack
@@ -83,7 +84,11 @@ Matplotlib(optional)	Exploratory plots
         | - Web UI: Price vs Time   |
         +---------------------------+
 
- Prerequisites
+
+6 how to run
+   you can run on google colab
+
+7  Prerequisites
  
 1 Python 3.8+  
 2 Install dependencies:
