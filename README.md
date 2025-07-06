@@ -138,9 +138,9 @@ P(t+1) = P(t) + α × (Occupancy / Capacity)
 
 - Characteristics:
   
-  1.Simple, interpretable
-  2.Only depends on occupancy
-  3. Serves as a benchmark model
+  - Simple, interpretable
+  -  Only depends on occupancy
+  -  Serves as a benchmark model
 
 - Model 2: Demand-based Pricing
   - Objective:
@@ -167,9 +167,9 @@ P(t) = BasePrice × (1 + λ × NormalizedDemand)
 
 Characteristics:
 
-  1. More intelligent
-  2.Considers queue, traffic, events, and vehicle type
-  3. Produces smooth, realistic price adjustments
+  - More intelligent
+  - Considers queue, traffic, events, and vehicle type
+  -  Produces smooth, realistic price adjustments
      
 
 10 Visualizations:
