@@ -14,6 +14,7 @@ It simulates live streaming from historical data, applies a demand-based pricing
 - overview
 - dataset
 - models
+- visualization
 - Prerequisites
 
 Tech Stack
@@ -94,89 +95,91 @@ Matplotlib(optional)	Exploratory plots
    - you can run on google colab
 
 
-
-7 Overview
+7  Overview
 
 Urban parking spaces are a scarce and highly demanded resource. Static pricing often leads to overcrowding or under-utilization of parking lots.
 
 This project implements an intelligent, real-time, data-driven pricing engine for 14 parking spaces, using real-time data streams, economic theory, and custom ML models (built from scratch with only numpy, pandas, and pathway).
 
-We implement two pricing models:
+ We implement two pricing models:
 
-Model 1: Baseline Linear Pricing
- Model 2: Demand-based Pricing
+ -Model 1: Baseline Linear Pricing
+ -Model 2: Demand-based Pricing
 
 8  Dataset
 We use a simulated dataset covering 14 parking lots, over 73 days, with 18 time points per day (every 30 mins from 8:00 AM to 4:30 PM).
 
-Each record includes:
+-Each record includes:
 
- Location: Latitude, Longitude
+   -Location: Latitude, Longitude
 
- Lot Features: Capacity, Occupancy, Queue length
+   -Lot Features: Capacity, Occupancy, Queue length
 
- Vehicle: Type (car, bike, truck)
+   -Vehicle: Type (car, bike, truck)
 
- Environment: Traffic congestion, Special day flag
+   -Environment: Traffic congestion, Special day flag
 
 
 9 Models
 
-Model 1: Baseline Linear Model
- Objective:
+-Model 1: Baseline Linear Model
+  -Objective:
 Price adjusts linearly with occupancy — as the lot fills up, the price increases proportionally.
 
 P(t+1) = P(t) + α × (Occupancy / Capacity)
 ​
-  p(t)— Current price
-  p(t+1)— Next price
-  α — Scaling factor (learning rate for price adjustment)
-  Occupancy — Current number of vehicles in the lot
-  Capacity — Maximum number of vehicles the lot can hold
+  -p(t)— Current price
+  -p(t+1)— Next price
+ -α — Scaling factor (learning rate for price adjustment)
+  -Occupancy — Current number of vehicles in the lot
+  -Capacity — Maximum number of vehicles the lot can hold
 
 
- Characteristics:
- 1.Simple, interpretable
- 2.Only depends on occupancy
- 3. Serves as a benchmark model
+- Characteristics:
+  
+  1.Simple, interpretable
+  2.Only depends on occupancy
+  3. Serves as a benchmark model
 
-Model 2: Demand-based Pricing
- Objective:
+-Model 2: Demand-based Pricing
+  -Objective:
 Price adjusts based on a composite demand score, incorporating multiple real-world factors beyond occupancy.
 
- Demand Function:
+- Demand Function:
 Demand = α × (Occupancy / Capacity) + β × QueueLength − γ × TrafficLevel + δ × IsSpecialDay + ε × VehicleTypeWeight
 
 
 
-Pricing based on Demand:
+-Pricing based on Demand:
 P(t) = BasePrice × (1 + λ × NormalizedDemand)
 
-BasePrice — Starting price (e.g., $10)
-NormalizedDemand — Scaled demand value to keep price smooth and bounded
-λ — Demand sensitivity factor
-QueueLength — Number of vehicles waiting
-TrafficLevel — Nearby traffic congestion level
-IsSpecialDay — Indicator for holidays or events
-VehicleTypeWeight — Weight based on type of incoming vehicle (e.g., car, bike, truck)
+   -BasePrice — Starting price (e.g., $10)
+    -NormalizedDemand — Scaled demand value to keep price smooth and bounded
+    -λ — Demand sensitivity factor
+    -QueueLength — Number of vehicles waiting
+     -TrafficLevel — Nearby traffic congestion level
+    -IsSpecialDay — Indicator for holidays or events
+    -VehicleTypeWeight — Weight based on type of incoming vehicle (e.g., car, bike, truck)
 
 
-Demand is normalized to keep prices smooth & bounded.
+-Demand is normalized to keep prices smooth & bounded.
 
 Characteristics:
-1. More intelligent
-2.Considers queue, traffic, events, and vehicle type
-3. Produces smooth, realistic price adjustments
 
-Visualizations
-1.Real-time line plots of daily prices for each of the 14 lots
+  1. More intelligent
+  2.Considers queue, traffic, events, and vehicle type
+  3. Produces smooth, realistic price adjustments
 
-2.Red dots at each time point for clarity
+10 Visualizations:
 
-3.Tabs for each parking lot 
+   1.Real-time line plots of daily prices for each of the 14 lots
+
+   2.Red dots at each time point for clarity
+
+   3.Tabs for each parking lot 
 
 
-10  Prerequisites
+11  Prerequisites
  
 1 Python 3.8+  
 2 Install dependencies:
