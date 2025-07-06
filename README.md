@@ -174,17 +174,18 @@ Characteristics:
 
 10 Visualizations:
 
-   1.Real-time line plots of daily prices for each of the 14 lots
+   - Real-time line plots of daily prices for each of the 14 lots
 
-   2.Red dots at each time point for clarity
+   -  Red dots at each time point for clarity
 
-   3.Tabs for each parking lot 
+   - Tabs for each parking lot 
 
 
 11  Prerequisites
  
-1 Python 3.8+  
-2 Install dependencies:
+ - Python 3.8+  
+ - Install dependencies:
+  
 ```bash
 pip install pandas numpy pathway bokeh panel  
 
